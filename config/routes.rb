@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'contact' ,to: 'staticpages#contact'
   get 'news' ,to: 'staticpages#news'
   get 'signup' ,to: 'users#new'
-  
+  resources:users
+
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
