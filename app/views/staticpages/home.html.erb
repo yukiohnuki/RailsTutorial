@@ -1,5 +1,22 @@
 <h1>Rails Tutorial</h1>
-<%= link_to "Sign up now", "/signup" %>
+
+
+<% if user_logged_in? %>
+  
+  <%= form_for @micropost do |f| %>
+  
+  <div class = "field">
+   <%= f.label :microposts %>
+   <%= f.text_field :body %>
+  </div>
+
+  <div class ="actions">
+    <%= f.submit "submit" %>
+  <% end %>
+
+<% else %>
+  <%= link_to "Sign up now","/signup" %>
+<% end %>
 
 
 

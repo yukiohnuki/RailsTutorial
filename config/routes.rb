@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
+  get 'login' ,to: 'sessions#new'
+  #get 'sessions/create'
+  delete 'logout' ,to: 'sessions#delete'
 
   root 'staticpages#home'
-  
   get 'help' ,to: 'staticpages#help'
   get 'about' ,to: 'staticpages#about'
   get 'contact' ,to: 'staticpages#contact'
   get 'news' ,to: 'staticpages#news'
   get 'signup' ,to: 'users#new'
-  resources:users
+  resources :users
+  resources :sessions
+  resources :microposts
 
 end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

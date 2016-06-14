@@ -11,4 +11,10 @@ class StaticpagesController < ApplicationController
  def news
  end
 
+ def home
+   
+   @micropost = Micropost.new
+   #@micropost.save
+ end
+
 end
