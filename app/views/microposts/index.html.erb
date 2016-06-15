@@ -1,8 +1,11 @@
+<h1>投稿一覧</h1>
 
 <ul>
     <% @microposts.each do |micropost| %>
     
+    <strong><%= micropost.user.name %></strong>
     <li><%= micropost.body %></li>
+    
 
     <% end %>
 

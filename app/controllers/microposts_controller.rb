@@ -6,26 +6,21 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = Micropost.new(micropost_params)
+    @micropost.user_id = session[:user]
     @micropost.save
-    redirect_to "/microposts"
+    redirect_to "/"
   end
 
   def index
     @microposts = Micropost.all
 
+    
+
   end
-
-  # def show
-  #   @micropost = Micropost.find(params[:id])
-  # end
-
-  # def update
-  #   redirect_to "/microposts"
-  # end
 
   private
 
   def micropost_params
-  params.require(:micropost).permit(:body)
+    params.require(:micropost).permit(:body)
   end
 end

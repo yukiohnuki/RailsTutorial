@@ -1,1 +1,13 @@
-<h1>Show</h1>
+<h1><%= @user[:name] %>さんのプロフィールページ</h1>
+<h2>投稿</h2>
+
+  <% @user.microposts.each do |micropost| %>
+  <li><%= micropost.body %></li>
+  <% end %>
+
+  <% if Relationship.where(following_id: session[:user], follower_id: @user.id).present? %>
+  <%= link_to "unfollow", follow_check_path(target_user_id: @user.id) %>
+
+  <% else %>
+  <%= link_to "follow", follow_check_path(target_user_id: @user.id) %>
+  <% end %>

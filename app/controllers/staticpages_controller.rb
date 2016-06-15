@@ -12,9 +12,8 @@ class StaticpagesController < ApplicationController
  end
 
  def home
-   
    @micropost = Micropost.new
-   #@micropost.save
+   @microposts = Micropost.all
  end
 
 end

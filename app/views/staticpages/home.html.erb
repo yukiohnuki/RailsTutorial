@@ -14,6 +14,16 @@
     <%= f.submit "submit" %>
   <% end %>
 
+  <ul>
+    <% @microposts.each do |micropost| %>
+    
+    <strong><%= micropost.user.name %></strong>
+    <li><%= micropost.body %></li>
+
+    <% end %>
+
+</ul>
+
 <% else %>
   <%= link_to "Sign up now","/signup" %>
 <% end %>

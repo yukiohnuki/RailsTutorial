@@ -3,19 +3,6 @@ class SessionsController < ApplicationController
   def new
   	@user = User.new
   end
-#   def create
-#      user = User.find_by(params[:email])
-#      if user and user.authenticate(params[:password])
-#      	session[:user_id] = user.id
-#      	redirect_to "/"
-#      else
-#      	redirect_to login_path, :alert =>"無効"
-#      end
-#   end
-
-#   def destroy
-#   end
-# end
 
 def create
 
